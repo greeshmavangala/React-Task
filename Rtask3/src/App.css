@@ -38,6 +38,9 @@ body {
   font-weight: 700;
   animation: fadeDown 0.8s ease;
 }
+.section>h2{
+  text-align: center;
+}
 
 .login-section {
   width: 100%;
