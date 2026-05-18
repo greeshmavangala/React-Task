@@ -1,0 +1,17 @@
+body{
+  font-family: Arial, sans-serif;
+  background-color:rgb(234, 215, 189);
+
+}
+
+h1{
+  color: rgb(22, 22, 155);
+  text-align: center;
+}
+
+h2 , strong{
+  color: rgb(112, 18, 18);
+}
+ol>li , p , ul>li{
+    color: rgb(39, 22, 21);
+}
