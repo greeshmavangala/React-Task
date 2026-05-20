@@ -152,7 +152,6 @@ export default function App() {
             </div>
           </div>
 
-          {/* Address */}
           <div className="input-group">
             <textarea
               name="address"
