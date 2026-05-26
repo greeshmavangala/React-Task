@@ -1,0 +1,181 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  overflow: hidden;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("https://wallpaperaccess.com/full/2479617.jpg") center/cover no-repeat;
+  position: relative;
+}
+
+.app::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 30, 15, 0.65);
+  backdrop-filter: blur(3px);
+}
+
+.chat-container {
+  position: relative;
+  z-index: 2;
+  width: 90%;
+  max-width: 650px;
+  padding: 30px;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+  animation: Float 3s ease-in-out infinite;
+}
+
+.chat-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 40, 20, 0.72);
+  backdrop-filter: blur(8px);
+}
+
+.chat-container * {
+  position: relative;
+  z-index: 2;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  margin-bottom: 25px;
+  font-size: 2.2rem;
+  text-shadow: 0 0 20px #7cff7c;
+  animation: Shake 2s infinite;
+}
+
+.input-section {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+input {
+  flex: 1;
+  padding: 16px;
+  border: none;
+  border-radius: 18px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.18);
+  color: white;
+  font-size: 1rem;
+  backdrop-filter: blur(8px);
+  transition: 0.3s;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+input:focus {
+  box-shadow: 0 0 20px #7cff7c;
+  transform: scale(1.03);
+}
+
+button {
+  padding: 16px 22px;
+  border: none;
+  border-radius: 18px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #00ff88, #00b894);
+  color: white;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.08) rotate(4deg);
+  box-shadow: 0 0 20px #7cff7c;
+}
+
+.messages-container {
+  max-height: 320px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.message {
+  padding: 14px 18px;
+  border-radius: 18px;
+  max-width: 75%;
+  color: white;
+  animation: bouncePop 0.5s ease;
+  background: rgba(124, 255, 124, 0.25);
+  backdrop-filter: blur(10px);
+}
+
+.message:nth-child(even) {
+  align-self: flex-end;
+  background: rgba(0, 255, 170, 0.3);
+}
+
+@keyframes Float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(-1deg);
+  }
+  75% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+@keyframes Shake {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(2deg);
+  }
+  50% {
+    transform: rotate(-2deg);
+  }
+  75% {
+    transform: rotate(2deg);
+  }
+}
+
+@keyframes bouncePop {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) translateY(30px);
+  }
+  60% {
+    transform: scale(1.15) translateY(-8px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.messages-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.messages-container::-webkit-scrollbar-thumb {
+  background: #7cff7c;
+  border-radius: 10px;
+}
